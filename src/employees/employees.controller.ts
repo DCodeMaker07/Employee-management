@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { EmployeesService } from './employees.service';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { UpdateEmployeeDto } from './dto/update-employee.dto';
+import { PaginationDto } from 'src/common';
 
 @Controller('employees')
 export class EmployeesController {
@@ -13,8 +14,8 @@ export class EmployeesController {
   }
 
   @Get()
-  findAll() {
-    return this.employeesService.findAll();
+  async findAll( @Query() paginationDto: PaginationDto ) {
+    return await this.employeesService.findAll(paginationDto);
   }
 
   @Get(':id')
