@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { EmployeesModule } from './employees/employees.module';
 import { PrismaService } from './prisma.service';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { SeedModule } from './seed/seed.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
       ]
     }),
     EmployeesModule,
+    SeedModule,
   ],
   controllers: [],
   providers: [
