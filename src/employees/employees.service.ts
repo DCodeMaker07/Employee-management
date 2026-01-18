@@ -1,8 +1,9 @@
-import { HttpStatus, Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { ForbiddenException, HttpStatus, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { UpdateEmployeeDto } from './dto/update-employee.dto';
 import { PrismaService } from 'src/prisma.service';
 import { PaginationDto } from '../common/dto/pagination.dto';
+import { envs } from 'src/config/envs';
 
 @Injectable()
 export class EmployeesService {
@@ -27,10 +28,19 @@ export class EmployeesService {
     const totalPages = await this.prisma.employee.count();
     const lastPage = Math.ceil(totalPages/limit!);
 
-    return await this.prisma.employee.findMany({
+    const employees = await this.prisma.employee.findMany({
       take: limit,
       skip: ( page! - 1 ) * limit!
     });
+
+    return {
+      data: employees,
+      meta: {
+        page,
+        totalPages,
+        lastPage
+      }
+    }
   }
 
   async findOne(id: number) {
@@ -79,5 +89,24 @@ export class EmployeesService {
         id
       }
     })
+  }
+
+  async insertAll(createEmployeeDto: CreateEmployeeDto[]) {
+    if(envs.nodeEnv === "prod"){
+      throw new ForbiddenException(`Seed disabled in production`);
+    }
+    await this.prisma.employee.createMany({
+      data: createEmployeeDto.map((item) => ({
+        ...item,
+        fechaNacimiento: new Date(item.fechaNacimiento)
+      }))
+    })
+  }
+
+  async removeAll() {
+    if(envs.nodeEnv === "prod"){
+      throw new ForbiddenException(`Seed disabled in production`);
+    }
+    await this.prisma.employee.deleteMany();
   }
 }
