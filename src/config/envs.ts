@@ -5,12 +5,14 @@ interface EnvVars {
     PORT: number;
     DATABASE_URL: string;
     NODE_ENV: string;
+    REDIS_URL: string;
 }
 
 const envsSchema = joi.object({
     PORT: joi.number().required(),
     DATABASE_URL: joi.string().required(),
     NODE_ENV: joi.string().required(),
+    REDIS_URL: joi.string().required(),
 })
 .unknown(true)
 
@@ -26,4 +28,5 @@ export const envs = {
     port: envVars.PORT,
     databaseUrl: envVars.DATABASE_URL,
     nodeEnv: envVars.NODE_ENV,
+    redisUrl: envVars.REDIS_URL,
 }
