@@ -1,0 +1,173 @@
+/* Tipado del empleado (equivalente a CreateEmployeeDto) */
+export interface EmployeeSeed {
+  tipoDocumento: string;
+  numeroDocumento: number;
+  nombre: string;
+  apellido: string;
+  cargo: string;
+  fechaNacimiento: string; // YYYY-MM-DD
+}
+
+/* Data seed */
+export const employeesSeed: EmployeeSeed[] = [
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123401,
+    nombre: 'Juan',
+    apellido: 'Pérez',
+    cargo: 'Soporte TI',
+    fechaNacimiento: '1998-04-12',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123402,
+    nombre: 'María',
+    apellido: 'Gómez',
+    cargo: 'Analista de Sistemas',
+    fechaNacimiento: '1997-09-21',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123403,
+    nombre: 'Carlos',
+    apellido: 'Ramírez',
+    cargo: 'Desarrollador Backend',
+    fechaNacimiento: '1996-01-30',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123404,
+    nombre: 'Lucía',
+    apellido: 'Fernández',
+    cargo: 'Desarrolladora Frontend',
+    fechaNacimiento: '1999-06-18',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123405,
+    nombre: 'Andrés',
+    apellido: 'Torres',
+    cargo: 'QA Tester',
+    fechaNacimiento: '1995-11-05',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123406,
+    nombre: 'Valeria',
+    apellido: 'Rojas',
+    cargo: 'UX Designer',
+    fechaNacimiento: '1998-02-14',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123407,
+    nombre: 'Diego',
+    apellido: 'Castillo',
+    cargo: 'DevOps Engineer',
+    fechaNacimiento: '1994-08-09',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123408,
+    nombre: 'Paola',
+    apellido: 'Mendoza',
+    cargo: 'Product Owner',
+    fechaNacimiento: '1993-12-27',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123409,
+    nombre: 'Luis',
+    apellido: 'Vargas',
+    cargo: 'Scrum Master',
+    fechaNacimiento: '1992-03-03',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123410,
+    nombre: 'Ana',
+    apellido: 'Silva',
+    cargo: 'Business Analyst',
+    fechaNacimiento: '1996-07-22',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123411,
+    nombre: 'Miguel',
+    apellido: 'Ortiz',
+    cargo: 'Arquitecto de Software',
+    fechaNacimiento: '1991-10-15',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123412,
+    nombre: 'Rocío',
+    apellido: 'Paredes',
+    cargo: 'Soporte Aplicaciones',
+    fechaNacimiento: '1999-01-09',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123413,
+    nombre: 'Jorge',
+    apellido: 'Navarro',
+    cargo: 'Administrador de Sistemas',
+    fechaNacimiento: '1993-05-28',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123414,
+    nombre: 'Camila',
+    apellido: 'Flores',
+    cargo: 'Data Analyst',
+    fechaNacimiento: '1997-08-17',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123415,
+    nombre: 'Ricardo',
+    apellido: 'León',
+    cargo: 'Ingeniero de Datos',
+    fechaNacimiento: '1994-02-02',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123416,
+    nombre: 'Natalia',
+    apellido: 'Cruz',
+    cargo: 'Marketing Digital',
+    fechaNacimiento: '1998-06-06',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123417,
+    nombre: 'Fernando',
+    apellido: 'Salazar',
+    cargo: 'Full Stack Developer',
+    fechaNacimiento: '1995-09-11',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123418,
+    nombre: 'Daniela',
+    apellido: 'Campos',
+    cargo: 'Recursos Humanos',
+    fechaNacimiento: '1997-12-19',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123419,
+    nombre: 'Hugo',
+    apellido: 'Reyes',
+    cargo: 'Seguridad Informática',
+    fechaNacimiento: '1992-04-25',
+  },
+  {
+    tipoDocumento: 'dni',
+    numeroDocumento: 70123420,
+    nombre: 'Andrea',
+    apellido: 'López',
+    cargo: 'Gestión de Proyectos',
+    fechaNacimiento: '1996-11-30',
+  },
+];
