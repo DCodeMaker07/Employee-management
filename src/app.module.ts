@@ -7,6 +7,7 @@ import { EmployeesModule } from './employees/employees.module';
 import { PrismaService } from './prisma.service';
 import { SeedModule } from './seed/seed.module';
 import { envs } from './config/envs';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { envs } from './config/envs';
     }),
     EmployeesModule,
     SeedModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [
