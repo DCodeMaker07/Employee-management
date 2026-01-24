@@ -8,9 +8,11 @@ import { PrismaService } from './prisma.service';
 import { SeedModule } from './seed/seed.module';
 import { envs } from './config/envs';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     // Rate Limit
     ThrottlerModule.forRoot({
       throttlers: [
